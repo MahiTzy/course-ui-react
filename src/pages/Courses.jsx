@@ -42,24 +42,35 @@ const Courses = () => {
   };
 
   return (
-    <Row>
-      {courses.map(course => (
-        <Col key={course.id} sm="6">
-          <Card>
-            <CardHeader>
-              <h3>Course Id: {course.id}</h3>
-            </CardHeader>
-            <CardBody>
-              <CardTitle tag="h5">{course.title}</CardTitle>
-              <CardText>{course.description}</CardText>
-              <Link color="primary" to={"/dashboard/course/" + course.id} className="me-2 btn btn-primary">View</Link>
-              <Button color="danger" onClick={handleDelete(course.id)}>Delete</Button>
-            </CardBody>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-  )
+    <>
+      {courses.length > 0 ? (
+        <Row>
+          {courses.map(course => (
+            <Col key={course.id} sm="6">
+              <Card>
+                <CardHeader>
+                  <h3>Course Id: {course.id}</h3>
+                </CardHeader>
+                <CardBody>
+                  <CardTitle tag="h5">{course.title}</CardTitle>
+                  <CardText>{course.description}</CardText>
+                  <Link color="primary" to={`/dashboard/course/${course.id}`} className="me-2 btn btn-primary">View</Link>
+                  <Button color="danger" onClick={handleDelete(course.id)}>Delete</Button>
+                </CardBody>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      ) : (
+        <Card>
+          <CardBody>
+            <CardText>No courses available.</CardText>
+          </CardBody>
+        </Card>
+      )}
+    </>
+  );
 }
+
 
 export default Courses
