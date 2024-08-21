@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Card, CardBody, CardText, CardTitle } from "reactstrap";
+import { Card, CardBody, CardHeader, CardText, CardTitle, Col, Container, ListGroup, ListGroupItem, Row } from "reactstrap";
 import { getCourseById } from "../services/course";
 
 const Course = () => {
-    const param = useParams();
-
-    const { id } = param;
-
+    const { id } = useParams();
     const [course, setCourse] = useState({});
-
     const [deliveries, setDeliveries] = useState([]);
 
     const { title, description, courseCode } = course;
@@ -18,30 +14,40 @@ const Course = () => {
         getCourseById(id).then(data => {
             setCourse(data);
             setDeliveries(data.deliveries);
-        }
-        ), []
-    })
+        });
+    }, [id]);
 
     return (
-        <div>
-            <Card>
-                <CardBody>
-                    <CardTitle tag="h5">{title}</CardTitle>
+        <Container className="my-4">
+            <Row>
+                <Col md="8" className="mx-auto">
+                    <Card>
+                        <CardHeader>
+                            <h3>Course Details</h3>
+                        </CardHeader>
+                        <CardBody>
+                            <CardTitle tag="h4" className="mb-3">{title}</CardTitle>
+                            <CardText className="mb-2"><strong>Course Code:</strong> {courseCode}</CardText>
+                            <CardText className="mb-4">{description}</CardText>
+                            <CardText className="mb-2"><strong>Total Deliveries:</strong> {deliveries.length}</CardText>
+                            {deliveries.length > 0 ? (
+                                <ListGroup>
+                                    {deliveries.map(delivery => (
+                                        <ListGroupItem key={delivery.id}>
+                                            <strong>Year:</strong> {delivery.year}&nbsp;&nbsp;
+                                            <strong>Semester:</strong> {delivery.semester}
+                                        </ListGroupItem>
+                                    ))}
+                                </ListGroup>
+                            ) : (
+                                <CardText>No deliveries available.</CardText>
+                            )}
+                        </CardBody>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
+    );
+};
 
-                    <CardText>Course Code: {courseCode}</CardText>
-                    <CardText>{description}</CardText>
-                    <CardText>Total Deliveries: {deliveries.length}</CardText>
-                    <CardText>{deliveries.map(delivery => (
-                        <div key={delivery.id}>
-                            Year: {delivery.year}
-                            &nbsp;Semester: {delivery.semester}
-                        </div>
-                    ))}</CardText>
-                </CardBody>
-
-            </Card>
-        </div>
-    )
-}
-
-export default Course
+export default Course;

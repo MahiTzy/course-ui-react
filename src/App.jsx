@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddCourse from './pages/AddCourse';
 import AddNewInstance from './pages/AddNewInstance';
@@ -16,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="dashboard" />} />
         <Route path="dashboard" element={<Dashboard />} >
           <Route path="" element={<Home />} />
           <Route path="courses" element={<Courses />} />

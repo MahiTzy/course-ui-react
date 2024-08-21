@@ -48,7 +48,7 @@ const Dashboard = () => {
                                 <li>
                                     <hr className="dropdown-divider" />
                                 </li>
-                                
+
                                 <li>
                                     <a className="dropdown-item d-flex align-items-center" href="#">
                                         <i className="bi bi-box-arrow-right"></i>
@@ -79,7 +79,7 @@ const Dashboard = () => {
                     </li>
                     <li className="nav-item">
                         <Link to={"add-course"} className="nav-link collapsed" href="#">
-                        <i className="bi bi-database-add"></i><span>Add New Course</span>
+                            <i className="bi bi-database-add"></i><span>Add New Course</span>
                         </Link>
                     </li>
                     <li className="nav-item">
@@ -89,7 +89,7 @@ const Dashboard = () => {
                     </li>
                     <li className="nav-item">
                         <Link to={"add-new-instances"} className="nav-link collapsed" href="#">
-                        <i className="bi bi-file-earmark-plus"></i><span>Add New Instance</span>
+                            <i className="bi bi-file-earmark-plus"></i><span>Add New Instance</span>
                         </Link>
                     </li>
                 </ul>
