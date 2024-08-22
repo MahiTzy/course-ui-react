@@ -17,6 +17,36 @@ This is a frontend application built with ReactJS that provides an interface to 
 - **View details of a particular course instance**
 - **Delete a particular course instance**
 
+## Demo
+
+### Screenshots
+
+Below are some screenshots of the application:
+
+1. **Homepage**
+   ![Homepage](https://github.com/user-attachments/assets/2f59d3b1-53be-4617-b145-6e44a99c5389)
+   *The homepage shows a list of all available courses.*
+
+2. **Course Creation**
+   ![Course Creation](https://github.com/user-attachments/assets/7dce0492-b047-4156-828e-375c937785de)
+   *The interface for creating a new course.*
+
+3. **Course Details**
+   ![Course Details 1](https://github.com/user-attachments/assets/3ee2ff78-8b1c-45a0-9b86-a80ca974f1b1)
+   ![Course Details 2](https://github.com/user-attachments/assets/01f81489-b10e-4787-a994-dcd56a7dd9ce)
+   *Detailed view of a specific course.*
+
+4. **Instance Management**
+   ![Instance Management 1](https://github.com/user-attachments/assets/cd4512b1-0ac7-4cc6-8a9e-c8639c1cfe71)
+   ![Instance Management 2](https://github.com/user-attachments/assets/430f947f-2394-4a30-bc03-162e1633ed63)
+   ![Instance Management 3](https://github.com/user-attachments/assets/246cd2fe-ec15-419d-b966-70457285ca89)
+   ![Instance Management 4](https://github.com/user-attachments/assets/b6cb8afa-a80d-4ff5-9e91-b507b69dd3ff)
+   *Manage and view instances of course deliveries.*
+
+5. **Deleting a Course**
+   ![Delete Course](https://github.com/user-attachments/assets/2169b91c-7305-4397-b0eb-c9cd500e27a0)
+   *The option to delete a particular course.*
+
 ## Installation
 
 1. Clone the repository:
